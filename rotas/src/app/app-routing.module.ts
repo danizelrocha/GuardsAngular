@@ -4,7 +4,10 @@ import { RouterModule, Routes } from '@angular/router';
 //Components Pages
 import { HomeComponent } from './shared/home/home.component';
 import { AccountComponent } from './shared/account/account.component';
+
+// Guards
 import { CanActiveGuard } from './shared/guards/can-active.guard';
+import { CandeactiveGuard } from './shared/guards/candeactive.guard';
 
 const routes: Routes = [
   {
@@ -14,12 +17,13 @@ const routes: Routes = [
   {
     path: 'account',
     component: AccountComponent,
-    canActivate: [CanActiveGuard]
+    canActivate: [CanActiveGuard],
+    canDeactivate: [CandeactiveGuard],
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
