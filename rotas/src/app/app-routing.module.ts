@@ -22,7 +22,7 @@ const routes: Routes = [
     canDeactivate: [CandeactiveGuard],
   },
   {
-    path:'',
+    path:'core',
     loadChildren: () => import('./core/core.module').then((m) => m.CoreModule),
   },
 ];

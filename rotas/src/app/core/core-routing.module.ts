@@ -8,16 +8,16 @@ import { LeadsComponent } from './pages/leads/leads.component';
 const routes: Routes = [
   {
     path:'',
-    component: DashboardComponent
+    component: DashboardComponent,
   },
   {
     path:'leads',
-    component:LeadsComponent
+    component:LeadsComponent,
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class CoreRoutingModule { }
