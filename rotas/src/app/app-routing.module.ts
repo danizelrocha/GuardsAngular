@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 //Components Pages
-import { HomeComponent } from './shared/home/home.component';
-import { AccountComponent } from './shared/account/account.component';
+import { HomeComponent } from './shared/pages/home/home.component';
+import { AccountComponent } from './shared/pages/account/account.component';
 
 // Guards
 import { CanActiveGuard } from './shared/guards/can-active.guard';
@@ -20,6 +20,10 @@ const routes: Routes = [
     component: AccountComponent,
     canActivate: [CanActiveGuard],
     canDeactivate: [CandeactiveGuard],
+  },
+  {
+    path:'',
+    loadChildren: () => import('./core/core.module').then((m) => m.CoreModule),
   },
 ];
 
